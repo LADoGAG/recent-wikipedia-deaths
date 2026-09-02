@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Recent Wikipedia Deaths</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+
+@property --inset{
+  syntax:'<length>';
+  inherits:true;
+  initial-value:8px;
+}
+
+:root{
+  --md-sys-color-primary:#7f4f24;
+  --md-sys-color-on-primary:#fff8f4;
+  --md-sys-color-primary-container:#ffdbbf;
+  --md-sys-color-on-primary-container:#2d1600;
+  --md-sys-color-secondary-container:#f6d7ba;
+  --md-sys-color-on-secondary-container:#5b3a00;
+  --md-sys-color-tertiary-container:#e1e7b1;
+  --md-sys-color-on-tertiary-container:#1a1e00;
+  --md-sys-color-error:#ba1a1a;
+  --md-sys-color-on-error:#fff8f4;
+  --md-sys-color-error-container:#f9dedc;
+  --md-sys-color-on-error-container:#601410;
+  --md-sys-color-surface:#fdeee3;
+  --md-sys-color-on-surface:#201a16;
+  --md-sys-color-surface-container:#f8e8dc;
+  --md-sys-color-surface-container-low:#fff8f4;
+  --md-sys-color-surface-container-high:#f3e3d7;
+  --md-sys-color-on-surface-variant:#7d766f;
+  --md-sys-color-outline:#857468;
+  --md-sys-color-outline-variant:#d6c4b6;
+  --md-sys-color-scrim:#000;
+  --md-sys-color-shadow:#000;
+  --md-sys-color-inverse-surface:#362f2a;
+  --md-sys-color-inverse-on-surface:#fbeee5;
+  --md-sys-color-inverse-primary:#ffb870;
+
+  --md-sys-shape-corner-extra-small:4px;
+  --md-sys-shape-corner-small:8px;
+  --md-sys-shape-corner-medium:12px;
+  --md-sys-shape-corner-large:16px;
+  --md-sys-shape-corner-extra-large:28px;
+  --md-sys-shape-corner-full:9999px;
+
+  --md-sys-typescale-headline-medium:400 28px/36px Roboto,sans-serif;
+  --md-sys-typescale-headline-small:400 24px/32px Roboto,sans-serif;
+  --md-sys-typescale-title-large:500 22px/28px Roboto,sans-serif;
+  --md-sys-typescale-title-medium:500 16px/24px Roboto,sans-serif;
+  --md-sys-typescale-body-large:400 16px/24px Roboto,sans-serif;
+  --md-sys-typescale-body-medium:400 14px/20px Roboto,sans-serif;
+  --md-sys-typescale-body-small:400 12px/16px Roboto,sans-serif;
+  --md-sys-typescale-label-large:500 14px/20px Roboto,sans-serif;
+  --md-sys-typescale-label-medium:500 12px/16px Roboto,sans-serif;
+  --md-sys-typescale-label-small:500 11px/16px Roboto,sans-serif;
+
+  --md-sys-state-hover-opacity:.08;
+  --md-sys-state-focus-opacity:.12;
+  --md-sys-state-pressed-opacity:.12;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --md-sys-color-primary:#f1a659;
+    --md-sys-color-on-primary:#452a10;
+    --md-sys-color-primary-container:#633d17;
+    --md-sys-color-on-primary-container:#ffdbbf;
+    --md-sys-color-secondary-container:#55402c;
+    --md-sys-color-on-secondary-container:#ffdcc2;
+    --md-sys-color-tertiary-container:#454a21;
+    --md-sys-color-on-tertiary-container:#e1e7b1;
+    --md-sys-color-error:#ffb4ab;
+    --md-sys-color-on-error:#690005;
+    --md-sys-color-error-container:#93463f;
+    --md-sys-color-on-error-container:#ffdad6;
+    --md-sys-color-surface:#171310;
+    --md-sys-color-on-surface:#eae0d9;
+    --md-sys-color-surface-container:#211a15;
+    --md-sys-color-surface-container-low:#352e28;
+    --md-sys-color-surface-container-high:#3a332c;
+    --md-sys-color-on-surface-variant:#d0c4bc;
+    --md-sys-color-outline:#9e8e82;
+    --md-sys-color-outline-variant:#534439;
+    --md-sys-color-scrim:#000;
+    --md-sys-color-shadow:#000;
+    --md-sys-color-inverse-surface:#eae0d9;
+    --md-sys-color-inverse-on-surface:#362f2a;
+    --md-sys-color-inverse-primary:#7f4f24;
+  }
+}
+
+:root[data-accent="blue"]{
+  --md-sys-color-primary:#0061a4;
+  --md-sys-color-on-primary:#ffffff;
+  --md-sys-color-primary-container:#d1e4ff;
+  --md-sys-color-on-primary-container:#001d36;
+  --md-sys-color-secondary-container:#d6e3f7;
+  --md-sys-color-on-secondary-container:#101c2b;
+  --md-sys-color-inverse-primary:#9ecaff;
+  --md-sys-color-surface:#e7eef7;
+  --md-sys-color-on-surface:#171c21;
+  --md-sys-color-surface-container:#eaf2fa;
+  --md-sys-color-surface-container-low:#f6faff;
+  --md-sys-color-surface-container-high:#dfe9f3;
+  --md-sys-color-on-surface-variant:#6e767e;
+  --md-sys-color-outline:#7f8890;
+  --md-sys-color-outline-variant:#c6d2de;
+  --md-sys-color-inverse-surface:#2a2f34;
+  --md-sys-color-inverse-on-surface:#edf2f7;
+}
+
+:root[data-accent="green"]{
+  --md-sys-color-primary:#386a20;
+  --md-sys-color-on-primary:#ffffff;
+  --md-sys-color-primary-container:#b8f398;
+  --md-sys-color-on-primary-container:#0f2000;
+  --md-sys-color-secondary-container:#dce8c8;
+  --md-sys-color-on-secondary-container:#1e2a12;
+  --md-sys-color-inverse-primary:#9dd67f;
+  --md-sys-color-surface:#eaf3e6;
+  --md-sys-color-on-surface:#191d16;
+  --md-sys-color-surface-container:#e9f2e2;
+  --md-sys-color-surface-container-low:#f6fbf1;
+  --md-sys-color-surface-container-high:#dde8d5;
+  --md-sys-color-on-surface-variant:#747b6f;
+  --md-sys-color-outline:#82897c;
+  --md-sys-color-outline-variant:#c8d4bf;
+  --md-sys-color-inverse-surface:#2e332a;
+  --md-sys-color-inverse-on-surface:#f0f5ea;
+}
+
+:root[data-accent="purple"]{
+  --md-sys-color-primary:#6750a4;
+  --md-sys-color-on-primary:#ffffff;
+  --md-sys-color-primary-container:#eaddff;
+  --md-sys-color-on-primary-container:#21005d;
+  --md-sys-color-secondary-container:#e8def8;
+  --md-sys-color-on-secondary-container:#1d192b;
+  --md-sys-color-inverse-primary:#d0bcff;
+  --md-sys-color-surface:#f9f7fc;
+  --md-sys-color-on-surface:#1c1b20;
+  --md-sys-color-surface-container:#f2edf7;
+  --md-sys-color-surface-container-low:#fbf7ff;
+  --md-sys-color-surface-container-high:#ece6f0;
+  --md-sys-color-on-surface-variant:#77757e;
+  --md-sys-color-outline:#86838d;
+  --md-sys-color-outline-variant:#d0c9d8;
+  --md-sys-color-inverse-surface:#313036;
+  --md-sys-color-inverse-on-surface:#f4eff7;
+}
+
+:root[data-accent="red"]{
+  --md-sys-color-primary:#ba1a1a;
+  --md-sys-color-on-primary:#ffffff;
+  --md-sys-color-primary-container:#ffdad6;
+  --md-sys-color-on-primary-container:#410002;
+  --md-sys-color-secondary-container:#f7ded9;
+  --md-sys-color-on-secondary-container:#2c1512;
+  --md-sys-color-inverse-primary:#ffb4ab;
+  --md-sys-color-surface:#fdeeec;
+  --md-sys-color-on-surface:#201918;
+  --md-sys-color-surface-container:#f8e7e4;
+  --md-sys-color-surface-container-low:#fff8f7;
+  --md-sys-color-surface-container-high:#f3dcd8;
+  --md-sys-color-on-surface-variant:#7d7472;
+  --md-sys-color-outline:#8a7f7c;
+  --md-sys-color-outline-variant:#d8c2be;
+  --md-sys-color-inverse-surface:#362e2c;
+  --md-sys-color-inverse-on-surface:#fbeeea;
+}
+
+@media (prefers-color-scheme: dark){
+
+  :root[data-accent="blue"]{
+    --md-sys-color-primary:#9ecaff;
+    --md-sys-color-on-primary:#003258;
+    --md-sys-color-primary-container:#00497d;
+    --md-sys-color-on-primary-container:#d1e4ff;
+    --md-sys-color-secondary-container:#3d4c5e;
+    --md-sys-color-on-secondary-container:#d6e3f7;
+    --md-sys-color-inverse-primary:#0061a4;
+    --md-sys-color-surface:#12171c;
+    --md-sys-color-on-surface:#e2e8ee;
+    --md-sys-color-surface-container:#1c2228;
+    --md-sys-color-surface-container-low:#293139;
+    --md-sys-color-surface-container-high:#2e363e;
+    --md-sys-color-on-surface-variant:#c3cbd4;
+    --md-sys-color-outline:#8b949d;
+    --md-sys-color-outline-variant:#4a545e;
+    --md-sys-color-inverse-surface:#e2e8ee;
+    --md-sys-color-inverse-on-surface:#2a3036;
+  }
+
+  :root[data-accent="green"]{
+    --md-sys-color-primary:#9dd67f;
+    --md-sys-color-on-primary:#1c3700;
+    --md-sys-color-primary-container:#2f5200;
+    --md-sys-color-on-primary-container:#b8f398;
+    --md-sys-color-secondary-container:#414d2c;
+    --md-sys-color-on-secondary-container:#dce8c8;
+    --md-sys-color-inverse-primary:#386a20;
+    --md-sys-color-surface:#141811;
+    --md-sys-color-on-surface:#e4eadd;
+    --md-sys-color-surface-container:#1c2119;
+    --md-sys-color-surface-container-low:#2b3128;
+    --md-sys-color-surface-container-high:#31372d;
+    --md-sys-color-on-surface-variant:#c6cdc0;
+    --md-sys-color-outline:#90978a;
+    --md-sys-color-outline-variant:#4b5246;
+    --md-sys-color-inverse-surface:#e4eadd;
+    --md-sys-color-inverse-on-surface:#2f342b;
+  }
+
+  :root[data-accent="purple"]{
+    --md-sys-color-primary:#d0bcff;
+    --md-sys-color-on-primary:#381e72;
+    --md-sys-color-primary-container:#4f378b;
+    --md-sys-color-on-primary-container:#eaddff;
+    --md-sys-color-secondary-container:#4a4458;
+    --md-sys-color-on-secondary-container:#e8def8;
+    --md-sys-color-inverse-primary:#6750a4;
+    --md-sys-color-surface:#141318;
+    --md-sys-color-on-surface:#e6e0e9;
+    --md-sys-color-surface-container:#1d1b22;
+    --md-sys-color-surface-container-low:#332f3b;
+    --md-sys-color-surface-container-high:#393441;
+    --md-sys-color-on-surface-variant:#cbc4d3;
+    --md-sys-color-outline:#958f9e;
+    --md-sys-color-outline-variant:#514b5a;
+    --md-sys-color-inverse-surface:#e6e0e9;
+    --md-sys-color-inverse-on-surface:#322f38;
+  }
+
+  :root[data-accent="red"]{
+    --md-sys-color-primary:#ffb4ab;
+    --md-sys-color-on-primary:#690005;
+    --md-sys-color-primary-container:#93000a;
+    --md-sys-color-on-primary-container:#ffdad6;
+    --md-sys-color-secondary-container:#5c403d;
+    --md-sys-color-on-secondary-container:#ffdad6;
+    --md-sys-color-inverse-primary:#ba1a1a;
+    --md-sys-color-surface:#181211;
+    --md-sys-color-on-surface:#eee0de;
+    --md-sys-color-surface-container:#221a18;
+    --md-sys-color-surface-container-low:#3a2e2c;
+    --md-sys-color-surface-container-high:#403431;
+    --md-sys-color-on-surface-variant:#d2c4c1;
+    --md-sys-color-outline:#a08e8a;
+    --md-sys-color-outline-variant:#564441;
+    --md-sys-color-inverse-surface:#eee0de;
+    --md-sys-color-inverse-on-surface:#372e2c;
+  }
+}
+
+*{
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
+
+body{
+  margin:0;
+  background:var(--md-sys-color-surface);
+  color:var(--md-sys-color-on-surface);
+  font-family:Roboto,system-ui,sans-serif;
+  overflow-x:clip;
+}
+
+[hidden]{
+  display:none!important;
+}
+
+.app-bar{
+  position:sticky;
+  top:0;
+  z-index:5;
+  background:var(--md-sys-color-surface);
+}
+
+.app-bar .row{
+  display:flex;
+  align-items:center;
+  gap:4px;
+  padding:8px 16px;
+  max-width:720px;
+  margin:0 auto;
+  min-height:56px;
+}
+
+.small-title{
+  font:var(--md-sys-typescale-title-large);
+  margin:0;
+  opacity:0;
+  transition:opacity .2s cubic-bezier(.2,0,0,1);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.app-bar.collapsed .small-title{
+  opacity:1;
+}
+
+.spacer{
+  flex:1;
+}
+
+.big-wrap{
+  max-width:720px;
+  margin:0 auto;
+  padding:0 16px;
+}
+
+.big-title{
+  font:var(--md-sys-typescale-headline-medium);
+  margin:0;
+  padding:24px 0 16px;
+}
+
+.icon-btn{
+  width:48px;
+  height:48px;
+  border-radius:var(--md-sys-shape-corner-full);
+  border:none;
+  background:transparent;
+  color:var(--md-sys-color-on-surface);
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  flex:none;
+  position:relative;
+  overflow:hidden;
+}
+
+.icon-btn::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:currentColor;
+  opacity:0;
+  transition:opacity .2s;
+  border-radius:inherit;
+}
+
+.icon-btn:hover::before{
+  opacity:var(--md-sys-state-hover-opacity);
+}
+
+.icon-btn:focus-visible::before{
+  opacity:var(--md-sys-state-focus-opacity);
+}
+
+.icon-btn:active::before{
+  opacity:var(--md-sys-state-pressed-opacity);
+}
+
+.icon-btn svg{
+  width:24px;
+  height:24px;
+  fill:currentColor;
+  position:relative;
+}
+
+.bar-input{
+  flex:1;
+  min-width:0;
+  background:none;
+  border:none;
+  outline:none;
+  color:var(--md-sys-color-on-surface);
+  font:var(--md-sys-typescale-title-medium);
+  height:48px;
+}
+
+.bar-input::placeholder{
+  color:var(--md-sys-color-on-surface-variant);
+}
+
+.list{
+  max-width:720px;
+  margin:0 auto;
+  padding:0 16px 32px;
+}
+
+.sec{
+  color:var(--md-sys-color-primary);
+  font:var(--md-sys-typescale-label-large);
+  padding:24px 0 8px;
+}
+
+.muted{
+  color:var(--md-sys-color-on-surface-variant);
+  padding:24px;
+  font:var(--md-sys-typescale-body-large);
+}
+
+.group{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+
+.card{
+  background:var(--md-sys-color-surface-container-low);
+  border-radius:var(--md-sys-shape-corner-extra-small);
+  padding:16px;
+  display:flex;
+  gap:16px;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+}
+
+a.card{
+  color:inherit;
+  text-decoration:none;
+}
+
+a.card:focus-visible{
+  outline:2px solid var(--md-sys-color-primary);
+  outline-offset:-2px;
+}
+
+.group .card:first-child{
+  border-radius:var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small);
+}
+
+.group .card:last-child{
+  border-radius:var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-extra-large);
+}
+
+.group .card:only-child{
+  border-radius:var(--md-sys-shape-corner-extra-large);
+}
+
+.card.click{
+  cursor:pointer;
+}
+
+.card.click::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:var(--md-sys-color-on-surface);
+  opacity:0;
+  transition:opacity .2s;
+}
+
+.card.click:hover::before{
+  opacity:var(--md-sys-state-hover-opacity);
+}
+
+.card.click:active::before{
+  opacity:var(--md-sys-state-pressed-opacity);
+}
+
+.card .txt{
+  flex:1;
+  min-width:0;
+  position:relative;
+}
+
+.card .t{
+  font:var(--md-sys-typescale-body-large);
+  margin:0 0 2px;
+}
+
+.card .s{
+  font:var(--md-sys-typescale-body-medium);
+  color:var(--md-sys-color-on-surface-variant);
+  margin:0;
+}
+
+.card .s.code{
+  font:var(--md-sys-typescale-label-medium);
+  letter-spacing:.5px;
+}
+
+.cb{
+  width:22px;
+  height:22px;
+  border:2px solid var(--md-sys-color-on-surface-variant);
+  border-radius:var(--md-sys-shape-corner-extra-small);
+  position:relative;
+  flex:none;
+  margin:0 13px;
+  transition:background-color .2s,border-color .2s;
+}
+
+.cb .g{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  display:none;
+  pointer-events:none;
+}
+
+.card.checked .cb,
+.card.ind .cb{
+  background:var(--md-sys-color-primary);
+  border-color:var(--md-sys-color-primary);
+  color:var(--md-sys-color-on-primary);
+}
+
+.card.checked .cb .g-check{
+  display:block;
+}
+
+.card.ind .cb .g-ind{
+  display:block;
+}
+
+.accents{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.accent{
+  width:48px;
+  height:48px;
+  border:none;
+  border-radius:var(--md-sys-shape-corner-full);
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  padding:0;
+}
+
+.accent svg{
+  width:24px;
+  height:24px;
+  fill:currentColor;
+  opacity:0;
+}
+
+.accent.on svg{
+  opacity:1;
+}
+
+.accent[data-accent="orange"]{background:#7f4f24;color:#fff8f4}
+.accent[data-accent="blue"]{background:#0061a4;color:#ffffff}
+.accent[data-accent="green"]{background:#386a20;color:#ffffff}
+.accent[data-accent="purple"]{background:#6750a4;color:#ffffff}
+.accent[data-accent="red"]{background:#ba1a1a;color:#ffffff}
+
+@media (prefers-color-scheme: dark){
+  .accent[data-accent="orange"]{background:#f1a659;color:#452a10}
+  .accent[data-accent="blue"]{background:#9ecaff;color:#003258}
+  .accent[data-accent="green"]{background:#9dd67f;color:#1c3700}
+  .accent[data-accent="purple"]{background:#d0bcff;color:#381e72}
+  .accent[data-accent="red"]{background:#ffb4ab;color:#690005}
+}
+
+.seg{
+  display:flex;
+  border:1px solid color-mix(in srgb,var(--md-sys-color-on-surface) 55%,transparent);
+  border-radius:var(--md-sys-shape-corner-full);
+  overflow:hidden;
+}
+
+.seg button{
+  flex:1;
+  border:none;
+  background:transparent;
+  color:var(--md-sys-color-on-surface);
+  font:var(--md-sys-typescale-label-large);
+  padding:10px 4px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  position:relative;
+  overflow:hidden;
+}
+
+.seg button+button{
+  border-left:1px solid color-mix(in srgb,var(--md-sys-color-on-surface) 55%,transparent);
+}
+
+.seg button::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:currentColor;
+  opacity:0;
+  transition:opacity .2s;
+}
+
+.seg button:active::before{
+  opacity:var(--md-sys-state-pressed-opacity);
+}
+
+.seg button.on{
+  background:var(--md-sys-color-secondary-container);
+  color:var(--md-sys-color-on-secondary-container);
+}
+
+.seg button .tick{
+  width:0;
+  height:16px;
+  fill:currentColor;
+  overflow:hidden;
+  transition:width .25s;
+  position:relative;
+}
+
+.seg button.on .tick{
+  width:16px;
+}
+
+#sliderBox{
+  overflow:hidden;
+}
+
+.m3-slider-container{
+  position:relative;
+  width:100%;
+  height:56px;
+  user-select:none;
+  isolation:isolate;
+  --inset:calc(var(--gap)/2 + var(--thumb-width)/2);
+  transition:--inset var(--anim);
+  --m3-primary:var(--md-sys-color-primary);
+  --m3-inactive:var(--md-sys-color-secondary-container);
+  --m3-dot:var(--md-sys-color-on-surface-variant);
+  --percent:14;
+  --slider-width:320px;
+  --thumb-width:4px;
+  --gap:12px;
+  --thumb-width-pressed:2px;
+  --gap-pressed:8px;
+  --track-height:16px;
+  --outer-radius:calc(var(--track-height)/2);
+  --inner-radius:4px;
+  --anim:150ms cubic-bezier(0.2,0,0,1);
+}
+
+.m3-slider-container:active,
+.m3-slider-container.pressed{
+  --thumb-width:var(--thumb-width-pressed);
+  --gap:var(--gap-pressed);
+}
+
+.m3-slider-input{
+  position:absolute;
+  width:100%;
+  height:100%;
+  margin:0;
+  opacity:0;
+  cursor:pointer;
+  z-index:10;
+  -webkit-appearance:none;
+  outline:none;
+}
+
+.m3-track-wrapper{
+  position:absolute;
+  left:0;
+  right:0;
+  height:var(--track-height);
+  top:50%;
+  transform:translateY(-50%);
+  pointer-events:none;
+}
+
+.m3-track-active-outer{
+  position:absolute;
+  left:0;
+  top:0;
+  height:100%;
+  width:calc(var(--percent)*1%);
+}
+
+.m3-track-inactive-outer{
+  position:absolute;
+  right:0;
+  top:0;
+  height:100%;
+  width:calc(100% - (var(--percent)*1%));
+}
+
+.m3-track-active{
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  right:var(--inset);
+  background:var(--m3-primary);
+  --w:max(0px,calc((var(--percent)*var(--slider-width))/100 - var(--inset)));
+  --cap:min(var(--outer-radius),var(--w)/2);
+  --cap-in:min(var(--inner-radius),var(--w)/2);
+  border-radius:var(--cap) var(--cap-in) var(--cap-in) var(--cap);
+}
+
+.m3-track-inactive{
+  position:absolute;
+  right:0;
+  top:0;
+  bottom:0;
+  left:var(--inset);
+  background:var(--m3-inactive);
+  --w:max(0px,calc(var(--slider-width) - (var(--percent)*var(--slider-width))/100 - var(--inset)));
+  --cap:min(var(--outer-radius),var(--w)/2);
+  --cap-in:min(var(--inner-radius),var(--w)/2);
+  border-radius:var(--cap-in) var(--cap) var(--cap) var(--cap-in);
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+}
+
+.m3-track-dot{
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background:var(--m3-dot);
+  opacity:.9;
+  margin-right:4px;
+}
+
+.m3-thumb-container{
+  position:absolute;
+  left:calc(var(--percent)*1%);
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:56px;
+  height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+  z-index:5;
+}
+
+.m3-thumb-bar{
+  width:var(--thumb-width);
+  height:44px;
+  background:var(--m3-primary);
+  border-radius:var(--md-sys-shape-corner-full);
+  transition:width var(--anim);
+}
+
+.hours-label{
+  text-align:right;
+  font:var(--md-sys-typescale-label-large);
+  color:var(--md-sys-color-on-surface);
+}
+
+.badge{
+  background:var(--md-sys-color-secondary-container);
+  color:var(--md-sys-color-on-secondary-container);
+  border-radius:var(--md-sys-shape-corner-small);
+  padding:4px 8px;
+  font:var(--md-sys-typescale-label-small);
+  letter-spacing:.5px;
+}
+
+.ev-head{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:6px;
+}
+
+.ev-time{
+  margin-left:auto;
+  font:var(--md-sys-typescale-label-medium);
+  color:var(--md-sys-color-on-surface-variant);
+}
+
+.ev-title{
+  font:var(--md-sys-typescale-title-medium);
+  margin:0 0 6px;
+}
+
+.ev-desc{
+  font:var(--md-sys-typescale-body-medium);
+  color:var(--md-sys-color-on-surface-variant);
+  margin:0;
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+
+.ev-comment{
+  font:var(--md-sys-typescale-body-small);
+  color:color-mix(in srgb,var(--md-sys-color-on-surface-variant) 70%,transparent);
+  margin:6px 0 0;
+}
+
+.status{
+  background:var(--md-sys-color-error-container);
+  color:var(--md-sys-color-on-error-container);
+  border-radius:var(--md-sys-shape-corner-extra-large);
+  padding:24px;
+  margin-bottom:16px;
+  font:var(--md-sys-typescale-body-medium);
+}
+
+.status button{
+  border:none;
+  background:none;
+  color:inherit;
+  font:var(--md-sys-typescale-label-large);
+  cursor:pointer;
+  padding:6px 8px;
+  border-radius:var(--md-sys-shape-corner-full);
+  display:block;
+  width:fit-content;
+  margin:24px 0 0 auto;
+  position:relative;
+  overflow:hidden;
+}
+
+.status button::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:currentColor;
+  opacity:0;
+  transition:opacity .2s;
+}
+
+.status button:hover::before{
+  opacity:var(--md-sys-state-hover-opacity);
+}
+
+.progress{
+  position:relative;
+  height:4px;
+  border-radius:2px;
+  overflow:hidden;
+  margin:8px 0 16px;
+  background:color-mix(in srgb,var(--md-sys-color-primary) 30%,transparent);
+}
+
+.progress::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:40%;
+  border-radius:2px;
+  background:var(--md-sys-color-primary);
+  animation:ind 1.2s infinite ease-in-out;
+}
+
+@keyframes ind{
+  from{left:-40%}
+  to{left:100%}
+}
+
+dialog{
+  border:none;
+  border-radius:var(--md-sys-shape-corner-extra-large);
+  background:var(--md-sys-color-surface-container);
+  color:var(--md-sys-color-on-surface);
+  max-width:480px;
+  width:calc(100% - 48px);
+  padding:24px;
+  box-shadow:0 4px 8px 3px color-mix(in srgb,var(--md-sys-color-shadow) 15%,transparent),0 1px 3px var(--md-sys-color-shadow);
+}
+
+dialog::backdrop{
+  background:color-mix(in srgb,var(--md-sys-color-scrim) 40%,transparent);
+}
+
+dialog h2{
+  font:var(--md-sys-typescale-headline-small);
+  margin:0 0 24px;
+}
+
+dialog .items{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+
+dialog .item{
+  background:var(--md-sys-color-surface-container-low);
+  border-radius:var(--md-sys-shape-corner-extra-small);
+  padding:16px;
+}
+
+dialog .item:first-child{
+  border-radius:var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small);
+}
+
+dialog .item:last-child{
+  border-radius:var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-extra-large);
+}
+
+dialog .item:only-child{
+  border-radius:var(--md-sys-shape-corner-extra-large);
+}
+
+dialog .item .t{
+  font:var(--md-sys-typescale-body-large);
+  margin:0 0 2px;
+}
+
+dialog .item .s{
+  font:var(--md-sys-typescale-body-medium);
+  color:var(--md-sys-color-on-surface-variant);
+}
+
+dialog .actions{
+  text-align:right;
+  margin-top:24px;
+}
+
+dialog .actions button{
+  border:none;
+  background:none;
+  color:var(--md-sys-color-primary);
+  font:var(--md-sys-typescale-label-large);
+  cursor:pointer;
+  padding:8px 12px;
+  border-radius:var(--md-sys-shape-corner-full);
+  position:relative;
+  overflow:hidden;
+}
+
+dialog .actions button::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:currentColor;
+  opacity:0;
+  transition:opacity .2s;
+}
+
+dialog .actions button:hover::before{
+  opacity:var(--md-sys-state-hover-opacity);
+}
+
+dialog .actions button:active::before{
+  opacity:var(--md-sys-state-pressed-opacity);
+}
+
+</style>
+</head>
+<body>
+
+<section id="feedScreen">
+  <header class="app-bar" id="feedBar">
+    <div class="row">
+      <h1 class="small-title">Recent Wikipedia Deaths</h1>
+      <span class="spacer"></span>
+      <button class="icon-btn" id="openSettings" aria-label="Settings">
+        <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.49.49 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.48.48 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.49.49 0 0 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.03.96c.22.08.47 0 .59-.22l1.92-3.32c.22-.32.07-.47-.12-.61l-2.01-1.58zM12 15.6a3.6 3.6 0 1 1 0-7.2 3.6 3.6 0 0 1 0 7.2z"/></svg>
+      </button>
+    </div>
+  </header>
+  <div class="big-wrap"><h1 class="big-title">Recent Wikipedia Deaths</h1></div>
+  <main class="list" id="feedList"></main>
+</section>
+
+<section id="settingsScreen" hidden>
+  <header class="app-bar" id="settingsBar">
+    <div class="row">
+      <button class="icon-btn" id="backBtn" aria-label="Back">
+        <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+      </button>
+      <h1 class="small-title" id="settingsTitleSmall"></h1>
+      <span class="spacer"></span>
+      <button class="icon-btn" id="openSearch" aria-label="Search">
+        <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>
+      </button>
+    </div>
+  </header>
+  <div class="big-wrap"><h1 class="big-title" id="settingsTitle"></h1></div>
+  <main class="list">
+    <div class="sec" id="secTime"></div>
+    <div class="group"><div class="card" style="display:block">
+      <div class="seg">
+        <button id="modeLive"><svg class="tick" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span id="lblLive"></span></button>
+        <button id="modeLast"><svg class="tick" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span id="lblLast"></span></button>
+      </div>
+      <div id="sliderBox">
+        <div class="m3-slider-container" id="hoursSlider">
+          <input type="range" class="m3-slider-input" id="hoursRange" min="1" max="168" step="1">
+          <div class="m3-track-wrapper">
+            <div class="m3-track-active-outer"><div class="m3-track-active"></div></div>
+            <div class="m3-track-inactive-outer"><div class="m3-track-inactive"><div class="m3-track-dot"></div></div></div>
+          </div>
+          <div class="m3-thumb-container"><div class="m3-thumb-bar"></div></div>
+        </div>
+        <div class="hours-label" id="hoursLabel"></div>
+      </div>
+    </div></div>
+
+    <div class="sec" id="secAccent"></div>
+    <div class="group"><div class="card" style="display:block">
+      <div class="accents" id="accentRow"></div>
+    </div></div>
+
+    <div class="sec" id="secLangs"></div>
+    <div id="langWrap"></div>
+  </main>
+</section>
+
+<section id="searchScreen" hidden>
+  <header class="app-bar" id="searchBar">
+    <div class="row">
+      <button class="icon-btn" id="searchBack" aria-label="Back">
+        <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+      </button>
+      <input class="bar-input" id="q" type="text" autocomplete="off">
+      <button class="icon-btn" id="qClear" hidden aria-label="Clear">
+        <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+    </div>
+  </header>
+  <main class="list"><div id="searchWrap"></div></main>
+</section>
+
+<dialog id="errDialog">
+  <h2 id="dlgTitle"></h2>
+  <div id="dlgBody"></div>
+  <div class="actions"><button id="dlgDone"></button></div>
+</dialog>
+
+<script>
+'use strict';
+
+const $ = s => document.querySelector(s);
+const uiLang = navigator.language || 'en';
+document.documentElement.lang = uiLang;
+
+const RU = {
+  settings:'Настройки',
+  timeframe:'Период времени',
+  live:'С момента открытия',
+  last:'За X часов',
+  accent:'Акцентный цвет',
+  sections:'Разделы Википедии',
+  all:'Выбрать все',
+  sel:(a,b)=>`${a} из ${b}`,
+  h:n=>`${n} ч`,
+  empty:'Пока пусто…',
+  errT:'Не удаётся связаться с Википедией. Проверьте подключение.',
+  errP:'Часть разделов недоступна.',
+  errS:(a,b)=>`Загружено: ${a} из ${b}.`,
+  details:'Подробнее',
+  done:'Готово',
+  dlg:'Ошибки запросов'
+};
+
+const EN = {
+  settings:'Settings',
+  timeframe:'Time period',
+  live:'Since opening',
+  last:'Last X hours',
+  accent:'Accent color',
+  sections:'Wikipedia editions',
+  all:'Select all',
+  sel:(a,b)=>`${a} of ${b}`,
+  h:n=>`${n} h`,
+  empty:'Nothing yet…',
+  errT:"Can't reach Wikipedia. Check your connection.",
+  errP:'Some editions are unavailable.',
+  errS:(a,b)=>`Loaded: ${a} of ${b}.`,
+  details:'Details',
+  done:'Done',
+  dlg:'Request errors'
+};
+
+const DE = {
+  settings:'Einstellungen',
+  timeframe:'Zeitraum',
+  live:'Seit dem Öffnen',
+  last:'Letzte X Stunden',
+  accent:'Akzentfarbe',
+  sections:'Wikipedia-Sprachversionen',
+  all:'Alle auswählen',
+  sel:(a,b)=>`${a} von ${b}`,
+  h:n=>`${n} h`,
+  empty:'Noch nichts…',
+  errT:'Wikipedia ist nicht erreichbar. Prüfen Sie Ihre Verbindung.',
+  errP:'Einige Sprachversionen sind nicht verfügbar.',
+  errS:(a,b)=>`Geladen: ${a} von ${b}.`,
+  details:'Details',
+  done:'Fertig',
+  dlg:'Anfragefehler'
+};
+
+const FR = {
+  settings:'Paramètres',
+  timeframe:'Période',
+  live:"Depuis l'ouverture",
+  last:'X dernières heures',
+  accent:"Couleur d'accent",
+  sections:'Éditions de Wikipédia',
+  all:'Tout sélectionner',
+  sel:(a,b)=>`${a} sur ${b}`,
+  h:n=>`${n} h`,
+  empty:"Rien pour l'instant…",
+  errT:'Impossible de joindre Wikipédia. Vérifiez votre connexion.',
+  errP:'Certaines éditions sont indisponibles.',
+  errS:(a,b)=>`Chargé : ${a} sur ${b}.`,
+  details:'Détails',
+  done:'OK',
+  dlg:'Erreurs de requête'
+};
+
+const ES = {
+  settings:'Ajustes',
+  timeframe:'Período de tiempo',
+  live:'Desde la apertura',
+  last:'Últimas X horas',
+  accent:'Color de acento',
+  sections:'Ediciones de Wikipedia',
+  all:'Seleccionar todo',
+  sel:(a,b)=>`${a} de ${b}`,
+  h:n=>`${n} h`,
+  empty:'Aún no hay nada…',
+  errT:'No se puede conectar con Wikipedia. Comprueba tu conexión.',
+  errP:'Algunas ediciones no están disponibles.',
+  errS:(a,b)=>`Cargado: ${a} de ${b}.`,
+  details:'Detalles',
+  done:'Listo',
+  dlg:'Errores de solicitud'
+};
+
+const PT = {
+  settings:'Configurações',
+  timeframe:'Período de tempo',
+  live:'Desde a abertura',
+  last:'Últimas X horas',
+  accent:'Cor de destaque',
+  sections:'Edições da Wikipédia',
+  all:'Selecionar tudo',
+  sel:(a,b)=>`${a} de ${b}`,
+  h:n=>`${n} h`,
+  empty:'Nada por enquanto…',
+  errT:'Não foi possível conectar à Wikipédia. Verifique sua conexão.',
+  errP:'Algumas edições estão indisponíveis.',
+  errS:(a,b)=>`Carregado: ${a} de ${b}.`,
+  details:'Detalhes',
+  done:'Concluído',
+  dlg:'Erros de solicitação'
+};
+
+const ZH = {
+  settings:'设置',
+  timeframe:'时间范围',
+  live:'打开以来',
+  last:'最近 X 小时',
+  accent:'强调色',
+  sections:'维基百科语言版本',
+  all:'全选',
+  sel:(a,b)=>`${a} / ${b}`,
+  h:n=>`${n} 小时`,
+  empty:'暂无内容…',
+  errT:'无法连接维基百科。请检查网络连接。',
+  errP:'部分语言版本不可用。',
+  errS:(a,b)=>`已加载:${a} / ${b}。`,
+  details:'详情',
+  done:'完成',
+  dlg:'请求错误'
+};
+
+const JA = {
+  settings:'設定',
+  timeframe:'期間',
+  live:'開いてから',
+  last:'過去X時間',
+  accent:'アクセントカラー',
+  sections:'ウィキペディアの言語版',
+  all:'すべて選択',
+  sel:(a,b)=>`${a} / ${b}`,
+  h:n=>`${n}時間`,
+  empty:'まだ何もありません…',
+  errT:'ウィキペディアに接続できません。接続を確認してください。',
+  errP:'一部の言語版は利用できません。',
+  errS:(a,b)=>`読み込み済み:${a} / ${b}`,
+  details:'詳細',
+  done:'完了',
+  dlg:'リクエストエラー'
+};
+
+const UI = {ru:RU, de:DE, fr:FR, es:ES, pt:PT, zh:ZH, ja:JA}[uiLang.split('-')[0].toLowerCase()] || EN;
+
+const ACCENTS = ['orange','blue','green','purple','red'];
+
+const state = {
+  targets:[],
+  selected:new Set(),
+  mode:'last',
+  hours:24,
+  accent:'orange',
+  history:[],
+  live:[],
+  loading:true,
+  failed:[],
+  success:0,
+  fetched:new Set(),
+  query:''
+};
+
+const store = {
+  get sel(){ try{return JSON.parse(localStorage.getItem('rwd_sel'))}catch{return null} },
+  set sel(v){ localStorage.setItem('rwd_sel', JSON.stringify([...v])) },
+  get time(){ try{return JSON.parse(localStorage.getItem('rwd_time'))}catch{return null} },
+  set time(v){ localStorage.setItem('rwd_time', JSON.stringify(v)) },
+  get accent(){ return localStorage.getItem('rwd_accent') },
+  set accent(v){ localStorage.setItem('rwd_accent', v) }
+};
+
+const PATTERNS = [
+  /\b(died|death|passed\s+away|obit)\b/i,
+  /(умер|скончался|погиб|умерла|скончалась|дата\s+смерти|похоронен)/i,
+  /category:.*deaths/i,
+  /категория:.*умершие/i,
+  /\b(18\d{2}|19\d{2}|20[0-2]\d)\s*[–-—]\s*(20\d{2})\b/
+];
+
+const Y = new Date().getFullYear();
+
+const CB_SVGS =
+  `<svg class="g g-check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4.2 9.4 7.4 12.6 13.8 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>` +
+  `<svg class="g g-ind" viewBox="0 0 18 18" aria-hidden="true"><rect x="4" y="8" width="10" height="2" rx="1" fill="currentColor"/></svg>`;
+
+function cap(s){
+  return s[0].toUpperCase()+s.slice(1);
+}
+
+function nameIn(code,loc){
+  try{
+    const n = new Intl.DisplayNames([loc],{type:'language'}).of(code);
+    if(!n || n.toLowerCase()===code.toLowerCase()) return null;
+    return cap(n);
+  }catch{
+    return null;
+  }
+}
+
+function displayName(code){
+  return nameIn(code,uiLang) || nameIn(code,'en') || code.toUpperCase();
+}
+
+function mkTarget(lang,category){
+  return {
+    lang,
+    category,
+    name: displayName(lang),
+    enName: nameIn(lang,'en') || lang.toUpperCase(),
+    natName: nameIn(lang,lang) || nameIn(lang,'en') || lang.toUpperCase()
+  };
+}
+
+const FALLBACK = [
+  ['en',`Category:${Y} deaths`],
+  ['ru',`Категория:Умершие в ${Y} году`],
+  ['de',`Kategorie:Gestorben ${Y}`],
+  ['fr',`Catégorie:Décès en ${Y}`],
+  ['es',`Categoría:Fallecidos en ${Y}`],
+  ['it',`Categoria:Morti nel ${Y}`],
+  ['ja',`Category:${Y}年没`],
+  ['zh',`Category:${Y}年逝世`],
+  ['pt',`Categoria:Mortos em ${Y}`],
+  ['nl',`Categorie:Overleden in ${Y}`],
+  ['pl',`Kategoria:Zmarli w ${Y}`],
+  ['uk',`Категорія:Померли ${Y}`],
+  ['ar',`تصنيف:وفيات ${Y}`],
+  ['fi',`Luokka:Vuonna ${Y} kuolleet`],
+  ['sv',`Kategori:Avlidna ${Y}`],
+  ['sk',`Kategória:Úmrtia v ${Y}`],
+  ['cs',`Kategorie:Úmrtí v ${Y}`]
+].map(([lang,category])=>mkTarget(lang,category));
+
+const dedupe = list => list.filter((t,i,a)=>a.findIndex(x=>x.lang===t.lang)===i);
+
+async function fetchTargets(){
+  const year = new Date().getFullYear();
+  const map = new Map();
+  let cont = null;
+
+  do{
+    try{
+      const p = new URLSearchParams({action:'query',titles:`Category:${year} deaths`,prop:'langlinks',lllimit:'500',format:'json',origin:'*'});
+      if(cont) p.set('llcontinue',cont);
+      const j = await (await fetch('https://en.wikipedia.org/w/api.php?'+p)).json();
+      const page = Object.values(j.query?.pages||{})[0];
+      (page?.langlinks||[]).forEach(l=>map.set(l.lang,l['*']));
+      cont = j.continue?.llcontinue || null;
+    }catch{
+      break;
+    }
+  }while(cont);
+
+  if(map.size===0) return FALLBACK;
+  if(!map.has('en')) map.set('en',`Category:${year} deaths`);
+
+  const list = [...map.entries()].map(([lang,category])=>mkTarget(lang,category));
+  const prio = [...new Set(['en',...navigator.languages.map(l=>l.split('-')[0].toLowerCase())])];
+  const head = prio.map(c=>list.find(t=>t.lang===c)).filter(Boolean);
+  const rest = list.filter(t=>!head.includes(t)).sort((a,b)=>{
+    const x=a.name.toLowerCase(), y=b.name.toLowerCase();
+    return x<y?-1:x>y?1:0;
+  });
+
+  return dedupe([...head,...rest]);
+}
+
+async function fetchMembers(t){
+  const p = new URLSearchParams({action:'query',list:'categorymembers',cmtitle:t.category,cmprop:'title|timestamp',cmsort:'timestamp',cmdir:'desc',cmlimit:'15',format:'json',origin:'*'});
+  const r = await fetch(`https://${t.lang}.wikipedia.org/w/api.php?${p}`);
+  if(!r.ok) throw new Error('HTTP '+r.status);
+  const j = await r.json();
+  return (j.query?.categorymembers||[]).filter(m=>m.ns===0).map(m=>({
+    id:Math.random().toString(36).slice(2),
+    title:m.title,
+    wiki:t.lang,
+    ts:Date.now()
+  }));
+}
+
+async function enrich(list){
+  const by = {};
+  list.forEach(e=>(by[e.wiki] ||= []).push(e));
+
+  for(const [wiki,arr] of Object.entries(by))
+    for(let i=0;i<arr.length;i+=5){
+      const batch = arr.slice(i,i+5);
+      try{
+        const p = new URLSearchParams({action:'query',prop:'extracts|pageprops',ppprop:'description',exintro:'1',explaintext:'1',exchars:'300',redirects:'1',titles:batch.map(e=>e.title).join('|'),format:'json',origin:'*'});
+        const j = await (await fetch(`https://${wiki}.wikipedia.org/w/api.php?${p}`)).json();
+        const map = {};
+        Object.values(j.query?.pages||{}).forEach(pg=>{ if(pg.title) map[pg.title]=pg; });
+        batch.forEach(e=>{
+          const pg=map[e.title];
+          if(pg){
+            e.desc=pg.pageprops?.description;
+            e.extract=(pg.extract||'').split('\n')[0];
+          }
+        });
+      }catch{}
+    }
+
+  return list;
+}
+
+async function loadHistory(langs){
+  await Promise.all(langs.map(async lang=>{
+    if(state.fetched.has(lang)) return;
+    state.fetched.add(lang);
+    const t = state.targets.find(t=>t.lang===lang);
+    if(!t) return;
+    try{
+      const items = await fetchMembers(t);
+      state.success++;
+      state.history.push(...items);
+      renderFeed();
+      enrich(items).then(renderFeed);
+    }catch(e){
+      state.failed.push({lang,msg:String(e?.message||e)});
+    }
+  }));
+  state.loading = false;
+  renderFeed();
+}
+
+function openStream(){
+  const es = new EventSource('https://stream.wikimedia.org/v2/stream/recentchange');
+  es.addEventListener('message', ev=>{
+    try{
+      const d = JSON.parse(ev.data);
+      if(d.namespace!==0 || d.project!=='wikipedia') return;
+      const title=d.title||'', comment=d.comment||'';
+      if(!PATTERNS.some(r=>r.test(title)||r.test(comment))) return;
+      const e = {
+        id:Math.random().toString(36).slice(2),
+        wiki:(d.server_name||'').split('.')[0],
+        title,
+        ts:(d.timestamp||Date.now()/1000)*1000,
+        comment
+      };
+      state.live.push(e);
+      if(state.live.length>300) state.live.shift();
+      renderFeed();
+      enrich([e]).then(renderFeed);
+    }catch{}
+  });
+}
+
+const visible = () => {
+  const now = Date.now();
+  const src = state.mode==='live' ? state.live : state.live.concat(state.history);
+  return src.filter(e=>state.selected.has(e.wiki) &&
+    (state.mode==='live' || now-e.ts<=state.hours*36e5)).sort((a,b)=>b.ts-a.ts);
+};
+
+const esc = s => String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function renderFeed(){
+  const list = visible();
+  let html = '';
+
+  if(state.loading) html += '<div class="progress"></div>';
+
+  if(!state.loading){
+    if(state.success===0) html += `<div class="status">${esc(UI.errT)}<button data-dlg="1">${UI.details}</button></div>`;
+    else if(state.failed.length) html += `<div class="status">${esc(UI.errP)}<br>${esc(UI.errS(state.success,state.targets.length))}<button data-dlg="1">${UI.details}</button></div>`;
+  }
+
+  if(list.length){
+    html += '<div class="group">' + list.map(e=>`
+      <a class="card click" href="https://${e.wiki}.wikipedia.org/wiki/${encodeURIComponent(e.title)}">
+        <div class="txt">
+          <div class="ev-head"><span class="badge">${e.wiki.toUpperCase()}</span>
+            <span class="ev-time">${new Date(e.ts).toLocaleString(uiLang,{dateStyle:'medium',timeStyle:'short'})}</span></div>
+          <p class="ev-title">${esc(e.title)}</p>
+          ${e.desc||e.extract?`<p class="ev-desc">${esc(e.desc||e.extract)}</p>`:''}
+          ${e.comment?`<p class="ev-comment">${esc(e.comment)}</p>`:''}
+        </div>
+      </a>`).join('') + '</div>';
+  } else if(!state.loading && state.success>0 && !state.failed.length){
+    html += `<p class="muted">${UI.empty}</p>`;
+  }
+
+  $('#feedList').innerHTML = html;
+}
+
+function langCard(t){
+  return `
+  <div class="card click ${state.selected.has(t.lang)?'checked':''}" data-lang="${t.lang}">
+    <span class="cb">${CB_SVGS}</span>
+    <div class="txt"><p class="t">${esc(t.name)}</p><p class="s code">${t.lang.toUpperCase()}</p></div>
+  </div>`;
+}
+
+function renderLangs(){
+  const all = state.targets.length>0 && state.selected.size===state.targets.length;
+  const some = state.selected.size>0 && !all;
+
+  let html = `<div class="group">
+    <div class="card click ${all?'checked':some?'ind':''}" data-all="1">
+      <span class="cb">${CB_SVGS}</span>
+      <div class="txt"><p class="t">${UI.all}</p><p class="s">${UI.sel(state.selected.size,state.targets.length)}</p></div>
+    </div>`;
+
+  html += state.targets.map(langCard).join('') + '</div>';
+  $('#langWrap').innerHTML = html;
+}
+
+function renderAccents(){
+  $('#accentRow').innerHTML = ACCENTS.map(a=>`
+    <button class="accent ${state.accent===a?'on':''}" data-accent="${a}" aria-label="${a}">
+      <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+    </button>`).join('');
+}
+
+const matches = (t,q) =>
+  t.name.toLowerCase().includes(q) ||
+  t.enName.toLowerCase().includes(q) ||
+  t.natName.toLowerCase().includes(q) ||
+  t.lang.includes(q);
+
+function renderSearch(){
+  const q = state.query.trim().toLowerCase();
+  const list = q ? state.targets.filter(t=>matches(t,q)) : state.targets;
+  $('#searchWrap').innerHTML = '<div class="group">' + list.map(langCard).join('') + '</div>';
+}
+
+$('#settingsTitle').textContent = UI.settings;
+$('#settingsTitleSmall').textContent = UI.settings;
+$('#secTime').textContent = UI.timeframe;
+$('#secAccent').textContent = UI.accent;
+$('#secLangs').textContent = UI.sections;
+$('#lblLive').textContent = UI.live;
+$('#lblLast').textContent = UI.last;
+$('#dlgTitle').textContent = UI.dlg;
+$('#dlgDone').textContent = UI.done;
+
+const sliderEl = $('#hoursSlider');
+
+new ResizeObserver(()=>sliderEl.style.setProperty('--slider-width', sliderEl.clientWidth+'px')).observe(sliderEl);
+
+sliderEl.addEventListener('pointerdown', ()=>sliderEl.classList.add('pressed'));
+addEventListener('pointerup',    ()=>sliderEl.classList.remove('pressed'));
+addEventListener('pointercancel',()=>sliderEl.classList.remove('pressed'));
+addEventListener('blur',         ()=>sliderEl.classList.remove('pressed'));
+
+function syncSlider(){
+  const r = $('#hoursRange');
+  r.value = state.hours;
+  const min = +r.min || 1, max = +r.max || 168;
+  const pct = (state.hours - min) / (max - min) * 100;
+  sliderEl.style.setProperty('--percent', pct);
+  $('#hoursLabel').textContent = UI.h(state.hours);
+}
+
+$('#hoursRange').addEventListener('input', e=>{
+  state.hours = +e.target.value;
+  store.time = {live:state.mode==='live', hours:state.hours};
+  syncSlider();
+  renderFeed();
+});
+
+function syncTimeUI(){
+  $('#modeLive').classList.toggle('on', state.mode==='live');
+  $('#modeLast').classList.toggle('on', state.mode==='last');
+  syncSlider();
+}
+
+let sliderAnim = null;
+
+function setSliderVisible(showIt){
+  const el = $('#sliderBox');
+  sliderAnim?.cancel();
+
+  if(showIt){
+    el.hidden = false;
+    syncSlider();
+    sliderAnim = el.animate(
+      [{height:'0px',opacity:0},{height:el.scrollHeight+'px',opacity:1}],
+      {duration:220,easing:'cubic-bezier(0,0,.2,1)'});
+    sliderAnim.onfinish = ()=>{ el.style.height=''; };
+  } else {
+    sliderAnim = el.animate(
+      [{height:el.scrollHeight+'px',opacity:1},{height:'0px',opacity:0}],
+      {duration:180,easing:'cubic-bezier(.4,0,1,1)'});
+    sliderAnim.onfinish = ()=>{ el.hidden = true; };
+  }
+}
+
+$('#modeLive').onclick = ()=>{
+  if(state.mode!=='live'){
+    state.mode='live';
+    store.time={live:true,hours:state.hours};
+    syncTimeUI();
+    setSliderVisible(false);
+    renderFeed();
+  }
+};
+
+$('#modeLast').onclick = ()=>{
+  if(state.mode!=='last'){
+    state.mode='last';
+    store.time={live:false,hours:state.hours};
+    syncTimeUI();
+    setSliderVisible(true);
+    renderFeed();
+  }
+};
+
+$('#accentRow').addEventListener('click', e=>{
+  const b = e.target.closest('.accent');
+  if(!b) return;
+  state.accent = b.dataset.accent;
+  store.accent = state.accent;
+  document.documentElement.dataset.accent = state.accent;
+  renderAccents();
+});
+
+const ORDER = ['feedScreen','settingsScreen','searchScreen'];
+let navClean = null;
+
+function show(id){
+  if(navClean){
+    navClean();
+    navClean = null;
+  }
+
+  const fromId = ORDER.find(s=>!$('#'+s).hidden);
+  scrollTo(0,0);
+  updateBars();
+  if(fromId === id) return;
+
+  const from = $('#'+fromId);
+  const to = $('#'+id);
+  const fwd = ORDER.indexOf(id) > ORDER.indexOf(fromId);
+
+  from.style.position = 'absolute';
+  from.style.top = '0';
+  from.style.left = '0';
+  from.style.width = '100%';
+  from.style.zIndex = '4';
+  from.style.pointerEvents = 'none';
+
+  to.hidden = false;
+
+  const out = from.animate(
+    [{opacity:1, transform:'translateX(0)'},
+     {opacity:0, transform:`translateX(${fwd?-32:32}px)`}],
+    {duration:180, easing:'cubic-bezier(.4,0,1,1)'});
+
+  to.animate(
+    [{opacity:0, transform:`translateX(${fwd?32:-32}px)`},
+     {opacity:1, transform:'translateX(0)'}],
+    {duration:240, easing:'cubic-bezier(0,0,.2,1)'});
+
+  navClean = ()=>{
+    from.hidden = true;
+    from.style.cssText = '';
+  };
+
+  out.onfinish = ()=>{
+    navClean = null;
+    from.hidden = true;
+    from.style.cssText = '';
+  };
+}
+
+$('#openSettings').onclick = ()=>show('settingsScreen');
+$('#backBtn').onclick = ()=>show('feedScreen');
+
+$('#openSearch').onclick = ()=>{
+  show('searchScreen');
+  setTimeout(()=>$('#q').focus(),60);
+};
+
+$('#searchBack').onclick = ()=>{
+  state.query='';
+  $('#q').value='';
+  $('#qClear').hidden=true;
+  $('#q').blur();
+  renderSearch();
+  show('settingsScreen');
+};
+
+$('#q').oninput = e=>{
+  state.query=e.target.value;
+  $('#qClear').hidden=!state.query;
+  renderSearch();
+};
+
+$('#qClear').onclick = ()=>{
+  state.query='';
+  $('#q').value='';
+  $('#qClear').hidden=true;
+  renderSearch();
+  $('#q').focus();
+};
+
+function onLangClick(e){
+  const card = e.target.closest('.card');
+  if(!card) return;
+
+  if(card.dataset.all){
+    const on = state.selected.size!==state.targets.length;
+    state.selected = new Set(on ? state.targets.map(t=>t.lang) : []);
+  } else {
+    const l = card.dataset.lang;
+    state.selected.has(l) ? state.selected.delete(l) : state.selected.add(l);
+  }
+
+  store.sel = state.selected;
+  renderLangs();
+  renderSearch();
+  renderFeed();
+
+  const fresh = [...state.selected].filter(l=>!state.fetched.has(l));
+  if(fresh.length) loadHistory(fresh);
+}
+
+$('#langWrap').addEventListener('click', onLangClick);
+$('#searchWrap').addEventListener('click', onLangClick);
+
+$('#feedList').addEventListener('click', e=>{
+  if(e.target.closest('[data-dlg]')){
+    $('#dlgBody').innerHTML = '<div class="items">' + state.failed.map(f=>`
+      <div class="item">
+        <div class="t">${f.lang.toUpperCase()}</div>
+        <div class="s">${esc(f.msg)}</div>
+      </div>`).join('') + '</div>';
+    $('#errDialog').showModal();
+    return;
+  }
+});
+
+$('#dlgDone').onclick = ()=>$('#errDialog').close();
+
+function updateBars(){
+  const c = scrollY > 40;
+  $('#feedBar').classList.toggle('collapsed', c && !$('#feedScreen').hidden);
+  $('#settingsBar').classList.toggle('collapsed', c && !$('#settingsScreen').hidden);
+}
+
+addEventListener('scroll', updateBars, {passive:true});
+
+(function(){
+  const t = store.time;
+  if(t){
+    state.mode = t.live?'live':'last';
+    state.hours = t.hours||24;
+  }
+  $('#sliderBox').hidden = state.mode!=='last';
+  syncTimeUI();
+
+  state.accent = store.accent || 'orange';
+  document.documentElement.dataset.accent = state.accent;
+  renderAccents();
+
+  state.targets = FALLBACK;
+  const saved = store.sel;
+  state.selected = new Set(saved
+    ? saved.filter(l=>state.targets.some(t=>t.lang===l))
+    : (()=>{
+        const s=[...new Set(navigator.languages.map(l=>l.split('-')[0].toLowerCase()))].filter(c=>state.targets.some(t=>t.lang===c));
+        return s.length?s:['en'];
+      })());
+  store.sel = state.selected;
+
+  renderLangs();
+  renderSearch();
+  renderFeed();
+  loadHistory([...state.selected]);
+  fetchTargets().then(list=>{
+    state.targets = dedupe(list);
+    renderLangs();
+    renderSearch();
+  });
+
+  openStream();
+  setInterval(renderFeed, 60000);
+})();
+</script>
+</body>
+</html>
